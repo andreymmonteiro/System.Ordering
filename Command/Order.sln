@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32127.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Domain", "Order.Domain\Order.Domain.csproj", "{C729FD06-BC5E-40BE-B21D-7AC20772D00B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Infraestructure", "Infraestructure\Order.Infraestructure.csproj", "{65DFB973-0947-465F-8E2B-654E1B199F82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Infraestructure", "Order.Infraestructure\Order.Infraestructure.csproj", "{65DFB973-0947-465F-8E2B-654E1B199F82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.WebApi", "Order.WebApi\Order.WebApi.csproj", "{0C0AC4D0-2C2E-4653-8B52-3009CAE37CA6}"
 EndProject

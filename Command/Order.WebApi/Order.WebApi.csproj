@@ -13,11 +13,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.16" />
+	  <PackageReference Include="Serilog" Version="2.12.0" />
+	  <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+	  <PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
 	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infraestructure\Order.Infraestructure.csproj" />
+    <ProjectReference Include="..\Order.Infraestructure\Order.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

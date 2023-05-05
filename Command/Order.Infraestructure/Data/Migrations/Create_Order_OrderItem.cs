@@ -36,7 +36,7 @@ namespace Order.Infraestructure.Data.Migrations
                 .WithColumn("Discount").AsDecimal();
 
             Create.Index("IX_Order_OrderItem")
-                .OnTable("Order")
+                .OnTable("Order");
         }
     }
 }
