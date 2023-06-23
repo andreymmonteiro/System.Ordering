@@ -35,22 +35,22 @@ builder.Services.AddInfraestructureDependencies(config);
 
 builder.Services.AddControllers();
 
-var database = NpgsqlDataSource.Create(config.ConnectionString);
-database.Dispose();
 
-    builder.Services.AddFluentMigratorCore().ConfigureRunner(configure =>
-    {
-        configure
-            .AddPostgres()
-            .WithGlobalConnectionString(config.ConnectionString)
-            .ScanIn(Assembly.Load(INFRAESTRUCTURE)).For.Migrations();
-    }).AddLogging(lb => lb.AddFluentMigratorConsole());
+builder.Services.AddFluentMigratorCore().ConfigureRunner(configure =>
+{
+    configure
+        .AddPostgres()
+        .WithGlobalConnectionString(config.ConnectionString)
+        .ScanIn(Assembly.Load(INFRAESTRUCTURE)).For.Migrations();
+
+}).AddLogging(lb => lb.AddFluentMigratorConsole());
 
 using var app = builder.Build();
 
 using var scope = app.Services.CreateScope();
 
 var migrator = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
+
 migrator.MigrateUp();
 
 app.UseHttpsRedirection();
