@@ -35,8 +35,8 @@ namespace Order.Infraestructure.Data.Migrations
                 .WithColumn("TotalDiscount").AsDecimal()
                 .WithColumn("Discount").AsDecimal();
 
-            Create.Index("IX_Order_OrderItem")
-                .OnTable("Order");
+            //Create.Index("IX_Order_OrderItem")
+            //    .OnTable("Order");
         }
     }
 }

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Development": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASP_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
