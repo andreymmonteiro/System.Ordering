@@ -1,10 +1,9 @@
+using FluentMigrator.Runner;
 using Order.Domain.Data;
 using Order.Infraestructure;
 using Order.Infraestructure.Data;
-using FluentMigrator.Runner;
 using Serilog;
 using System.Reflection;
-using Npgsql;
 
 const string V1 = "v1";
 const string APPLICATION = "Order.WebApi";
@@ -29,12 +28,10 @@ Log.Logger = new LoggerConfiguration()
 
 IConfig config = builder.Configuration.GetSection("AppSettings:Config").Get<Config>();
 
-((Config)config).CreateDatabase();
-
+await ((Config)config).CreateDatabase();
 builder.Services.AddInfraestructureDependencies(config);
 
 builder.Services.AddControllers();
-
 
 builder.Services.AddFluentMigratorCore().ConfigureRunner(configure =>
 {
@@ -44,6 +41,7 @@ builder.Services.AddFluentMigratorCore().ConfigureRunner(configure =>
         .ScanIn(Assembly.Load(INFRAESTRUCTURE)).For.Migrations();
 
 }).AddLogging(lb => lb.AddFluentMigratorConsole());
+
 
 using var app = builder.Build();
 
